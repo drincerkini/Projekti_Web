@@ -12,24 +12,7 @@
     <!-- pjesa e header -->
 
     <div class="header" style="background: radial-gradient(#fff, #878C8F);">
-        <div class="navbar">
-            <div class="logo">
-                <img src="images/logo-11.png" width="125px">
-            </div>
-            
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="men.html">Men</a></li>
-                    <li><a href="women.html">Women</a></li>
-                    <li><a href="kids.html">Kids</a></li>
-                    <li><a href="loginForm.html">Login</a></li>
-                </ul>
-            </nav>
-
-            <img src="images/icona-buy.png" width="30px" height="30px">
- 
-        </div>
+    <?php include "HeaderFooter/header.php" ?>
     </div>
 
 
@@ -181,51 +164,7 @@
     <!--pjesa e footer-it -->
 
     <div class="footer">
-
-        <div class="footer-container">
-
-            <div class="row">
-
-                <div class="footer-col-1">
-                    <h3>Download Our App</h3>
-                    <p>Download App for Android and IOS mobile phone</p>
-                    <div class="app-logo">
-                        <img src="images/play-store.png" >
-                        <img src="images/app-store.png" >
-                    </div>
-                </div>
-
-                <div class="footer-col-2">
-                    <img src="images/logo-11.png" >
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam rerum libero architecto sequi, numquam consequuntur placeat molestias, atque a fuga id magni! Et fugiat, a provident explicabo ducimus numquam voluptates! </p>
-                </div>
-
-                <div class="footer-col-3">
-                    <h3>Useful Links</h3>
-                   <ul>
-                       <li>Coupons</li>
-                       <li>Return Policy</li>
-                       <li>Blog Post</li>
-                       <li>Join Affiliate</li>
-                   </ul>
-                </div>
-
-                <div class="footer-col-4">
-                    <h3>Follow us</h3>
-                   <ul>
-                       <li>Facebook</li>
-                       <li>Twitter</li>
-                       <li>instagram</li>
-                       <li>Youtube</li>
-                   </ul>
-                </div>
-
-            </div>
-            <hr>
-            <p class="copyright">Copyright 2021 - DF Store </p>
-
-        </div>
-
+    <?php include "HeaderFooter/footer.php" ?>
     </div>
 
 
