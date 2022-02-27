@@ -72,7 +72,7 @@ tr:nth-child(even) {
                   <li><a href="../index.php">Home</a></li>
                   <li><a href="produktet.php">Men Products</a></li>
                   <li><a href="womenProducts.php">Women Products</a></li>
-                  <li><a href="kidsProducts.php">Kids Products</a></li>
+                  <li><a href="kidsProducts.php">Kids</a></li>
                   <li><a href="register.php">Login</a></li>
                   <li><a href="logout.php">Log out</a></li>
               </ul>
@@ -88,31 +88,26 @@ tr:nth-child(even) {
         <thead>
             <tr>
               <th>ID</th>
-              <th>NAME</th>
-              <th>SURNAME</th>
-              <th>EMAIL</th>
-              <th>PASSWORD</th>
-              <th>ROLE</th>
+              <th>IMAGE</th>
+              <th>DESCRIPTION</th>
+              <th>PRICE</th>
             </tr>
         </thead>
         <tbody>
             <?php  
-                include_once '../repository/userRepository.php';
-                $userRepository = new UserRepository;
-                $users = $userRepository->getAllUsers();
+                include_once '../repository/mainRepository.php';
+                $prodRepo = new MainRepository;
+                $products = $prodRepo->getAllProducts();
 
-              foreach($users as $user){
+              foreach($products as $prod){
                 echo
                 "
                   <tr>
-                      <td> $user[uid] </td>
-                      <td> $user[name] </td>
-                      <td> $user[surname] </td>
-                      <td> $user[email] </td>
-                      <td> $user[password] </td>
-                      <td> $user[role] </td>
-                      <td> <a href='edit.php?id=$user[uid]' >Edit </a> </td>
-                      <td> <a href='delete.php?id=$user[uid]' >Delete </a> </td>
+                      <td> $prod[pid] </td>
+                      <td> $prod[image] </td>
+                      <td> $prod[description] </td>
+                      <td> $prod[price] </td>
+                      
                   </tr>
                 ";
               }

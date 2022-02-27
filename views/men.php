@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Men</title>
-    <link rel="stylesheet" href="css/style-products.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/products.css">
 </head>
 <body>
-
-    <!-- pjesa e header -->
-
-    <div class="header" style="background: radial-gradient(#fff, #878C8F);">
-    <?php include "HeaderFooter/header.php" ?>
+    
+<!-- pjesa e header -->
+    <div class="header">
+        <?php  include '../HeaderFooter/headerProduct.php' ?>
     </div>
 
 
+<!--pjesa e cover page -->
     <div class="container" style="background: radial-gradient(#fff, #2E2C2F);">
         <div class="row">
 
@@ -26,7 +26,7 @@
             </div>
 
             <div class="col-2">
-                <img src="images/mens/men-5.png" >
+                <img src="../images/men/men-5.png" >
             </div>
 
         </div>
@@ -38,102 +38,50 @@
 
         <div class="small-container">
 
+        <h2 class="title">Reklamë</h2>
             <div class="row">
 
                 <div class="col-3">
-                    <img src="images//mens/nike-10.png">
+                    <img src="../images/men/nike-10.png">
                 </div>
                 <div class="col-3">
-                    <img src="images/mens/men-2.png">
+                    <img src="../images/men/men-2.png">
                 </div>
                 <div class="col-3">
-                    <img src="images/mens/nike-11.png">
+                    <img src="../images/men/nike-11.png">
                 </div>
                 
             </div>
         </div>
     </div>
-    <!--pjesa e produkteve ne trend-->>
+    <!--pjesa e produkteve ne trend-->
 
     <div class="small-container">
 
         <h2 class="title">Produktet ne trend</h2>
 
         <div class="row">
+            
+            <?php 
+                 include_once '../repository/menRepository.php';
 
-            <div class="col-4">
-                <img src="images/mens/nike-12.png" >
-                <h4>Duks per Meshkuj</h4>
-                <p>50.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/mens/nike-13.png" >
-                <h4>Jakne per Meshkuj</h4>
-                <p>45.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/mens/nike-14.png" >
-                <h4>Jakne per Meshkuj</h4>
-                <p>60.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/mens/nike-15.png" >
-                <h4>Duks per Meshkuj</h4>
-                <p>50.00€</p>
-            </div>
+                $prodRepo = new TestRepo;
+                $prod = $prodRepo->getAllProducts();
+
+                foreach($prod as $produktet){
+                    echo "
+                        <div class='col-4'> 
+                            <img src='../images/men/$produktet[image]' >
+                            <h4>$produktet[descritpion]</h4>
+                            <p>$produktet[price]€</p>
+                        </div>
+                    ";
+                }
+            ?>
 
         </div>
 
-        <h2 class="title">Produktet e reja</h2>
-
-        <!-- pjesa e produkteve te reja-->
-
-        <div class="row">
-
-            <div class="col-4">
-                <img src="images/mens/nike-16.png" >
-                <h4>Jelek per Meshkuj</h4>
-                <p>60.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/mens/nike-17.png" >
-                <h4>Duks per Meshkuj</h4>
-                <p>65.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/mens/nike-18.png" >
-                <h4>Këmish per Meshkuj</h4>
-                <p>60.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/mens/nike-19.png" >
-                <h4>Këmish per Meshkuj</h4>
-                <p>50.00€</p>
-            </div>
-
-            <div class="col-4">
-                <img src="images/mens/nike-20.png" >
-                <h4>Duks per Meshkuj</h4>
-                <p>60.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/mens/nike-21.png" >
-                <h4>Jakne per Meshkuj</h4>
-                <p>50.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/mens/nike-22.png" >
-                <h4>Duks per Meshkuj</h4>
-                <p>65.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/mens/nike-23.png" >
-                <h4>Duks per Meshkuj</h4>
-                <p>35.00€</p>
-            </div>
-
-        </div>
-
+        
         <!-- pjesa e ofertes -->
 
         <div class="oferta">
@@ -143,7 +91,7 @@
                 <div class="row">
 
                     <div class="col-2">
-                        <img src="images/mens/offer-3.png" class="offer-img">
+                        <img src="../images/men/offer-3.png" class="offer-img">
                     </div>
 
                     <div class="col-2">
@@ -161,14 +109,11 @@
 
     </div>
 
-    <!--pjesa e footer-it -->
-
+<!--pjesa e footer-it -->
     <div class="footer">
-    <?php include "HeaderFooter/footer.php" ?>
+        <?php  include '../HeaderFooter/footerProducts.php' ?>
     </div>
 
 
-
-    
 </body>
 </html>

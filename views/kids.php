@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kids</title>
-    <link rel="stylesheet" href="css/style-products.css">
+    <link rel="stylesheet" href="../css/products.css">
 </head>
 <body>
 
     <!-- pjesa e header -->
-
-    <div class="header" style="background: radial-gradient(#fff, #eeebc2);">
-    <?php include "HeaderFooter/header.php" ?>
+    <div class="header">
+        <?php  include '../HeaderFooter/headerProduct.php' ?>
     </div>
+   
 
-
+    <!-- pjesa e main page -->
     <div class="container" style="background: radial-gradient(#fff, #C7BFAA);">
         <div class="row">
 
@@ -26,7 +26,7 @@
             </div>
 
             <div class="col-2">
-                <img src="images/kids/kid-oferta.png" >
+                <img src="../images/kids/kid-oferta.png" >
             </div>
 
         </div>
@@ -37,23 +37,23 @@
     <div class="categories">
 
         <div class="small-container">
-
+        <h2 class="title">Reklamë</h2>
             <div class="row">
 
                 <div class="col-3">
-                    <img src="images/kids/kid-10.png">
+                    <img src="../images/kids/kid-10.png">
                 </div>
                 <div class="col-3">
-                    <img src="images/kids/kid-2.png">
+                    <img src="../images/kids/kid-2.png">
                 </div>
                 <div class="col-3">
-                    <img src="images/kids/kid-6.png">
+                    <img src="../images/kids/kid-6.png">
                 </div>
                 
             </div>
         </div>
     </div>
-    <!--pjesa e produkteve ne trend-->>
+    <!--pjesa e produkteve ne trend-->
 
     <div class="small-container">
 
@@ -61,77 +61,22 @@
 
         <div class="row">
 
-            <div class="col-4">
-                <img src="images/kids/kid-2.png" >
-                <h4>Jakne per Femije</h4>
-                <p>50.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/kids/kid-3.png" >
-                <h4>Duks per Femije</h4>
-                <p>45.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/kids/kid-4.png" >
-                <h4>Duks per Femije</h4>
-                <p>60.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/kids/kid-5.png" >
-                <h4>Duks per Femije</h4>
-                <p>50.00€</p>
-            </div>
+        <?php 
+                 include_once '../repository/kidsRepository.php';
 
-        </div>
+                $prodRepo =new KidsRepository;
+                $produktet = $prodRepo->getAllProducts();
 
-        <h2 class="title">Produktet e reja</h2>
-
-        <!-- pjesa e produkteve te reja-->
-
-        <div class="row">
-
-            <div class="col-4">
-                <img src="images/kids/kid-9.png" >
-                <h4>Trenerka per Femije</h4>
-                <p>60.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/kids/kid-11.png" >
-                <h4>Duks per Femije</h4>
-                <p>65.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/kids/kid-8.png" >
-                <h4>Trenerka per Femije</h4>
-                <p>60.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/kids/kid-6.png" >
-                <h4>Maic per Femije</h4>
-                <p>50.00€</p>
-            </div>
-
-            <div class="col-4">
-                <img src="images/kids/kid-10.png" >
-                <h4>Trenerka per Femije</h4>
-                <p>60.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/kids/kid-13.png" >
-                <h4>Jakne per Femije</h4>
-                <p>50.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/kids/kid-14.png" >
-                <h4>Jakne per Femije</h4>
-                <p>65.00€</p>
-            </div>
-            <div class="col-4">
-                <img src="images/kids/kid-15.png" >
-                <h4>Jakne per Femije</h4>
-                <p>35.00€</p>
-            </div>
-
+                foreach($produktet as $prod){
+                    echo "
+                        <div class='col-4'> 
+                            <img src='../images/kids/$prod[image]' >
+                            <h4>$prod[description]</h4>
+                            <p>$prod[price]€</p>
+                        </div>
+                    ";
+                }
+            ?>
         </div>
 
         <!-- pjesa e ofertes -->
@@ -143,7 +88,7 @@
                 <div class="row">
 
                     <div class="col-2">
-                        <img src="images/kids/kid-7.png" class="offer-img">
+                        <img src="../images/kids/kid-7.png" class="offer-img">
                     </div>
 
                     <div class="col-2">
@@ -162,13 +107,9 @@
     </div>
 
     <!--pjesa e footer-it -->
-
     <div class="footer">
-    <?php include "HeaderFooter/footer.php" ?>
+        <?php  include '../HeaderFooter/footerProducts.php' ?>
     </div>
-
-
-
     
 </body>
 </html>
