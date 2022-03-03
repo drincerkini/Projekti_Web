@@ -22,7 +22,7 @@ function login(){
 
 
 document.addEventListener("DOMContentLoaded", function(ngjarja) {
-    const BtnSubmit = document.getElementById('btnLF');
+    const BtnSubmit = document.getElementById('btn');
 
     const validate = (ngjarja) => {
         ngjarja.preventDefault();

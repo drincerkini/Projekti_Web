@@ -8,5 +8,5 @@
     </form>
 
     <?php 
-        require_once '../controllers/loginValidate.php';
+        require_once '..controllers/loginController';
     ?>
