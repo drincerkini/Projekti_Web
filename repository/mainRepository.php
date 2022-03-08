@@ -1,6 +1,6 @@
 <?php 
-include_once 'config/databaseConnection.php';
-include_once 'models/produkti.php';
+include_once '../config/databaseConnection.php';
+include_once '../models/produkti.php';
 
 class MainRepository extends Produkti{
     private $connection;
@@ -37,6 +37,18 @@ class MainRepository extends Produkti{
         $products = $statment->fetchAll();
 
         return $products;
+    }
+
+    //Fshirja e produkteve
+    public function delete($pid){
+        $conn = $this->connection;
+
+        $sql = "DELETE FROM mainproducts WHERE pid=?";
+
+        $statement = $conn->prepare($sql);
+        $statement->execute([$pid]);
+
+        echo "<script>alert('delete was successful'); </script>";
     }
 }
 

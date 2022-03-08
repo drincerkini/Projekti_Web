@@ -11,7 +11,7 @@ body{
 /* stilizimi i pjeses se header*/
 .header{
     max-height: 150px;
-    background: radial-gradient(#fff, #7a7670);
+    /* background: radial-gradient(#fff, #7a7670); */
     position: sticky;
     top: 0;
 }

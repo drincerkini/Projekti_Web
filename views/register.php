@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DF STORE</title>
-    <link rel="stylesheet" href="../css//register.css">
+    <link rel="stylesheet" href="../css/register.css">
 </head>
 <body>
     
     <!-- pjesa e header -->
 
     <div class="header">
-        <?php include '../HeaderFooter/headerProduct.php';?>
+        <?php include '../HeaderFooter/registerHeader.php';?>
     </div>
 
 
@@ -37,7 +35,7 @@
 
 
                     
-                    <?php include '../views/login.php'?>
+                    <?php include 'login.php'?>
 
                     <?php require_once '../controllers/registerController.php';?>
 
@@ -54,21 +52,21 @@
         </div>
     </div>
 </div>
-   
 <?php include_once '../controllers/registerController.php';?>
+<?php include_once '../repository/userRepository.php'; ?>
 
     <!--pjesa e footer-it -->
 
     <div class="footer">
-        <?php include '../HeaderFooter/footer.php';?>
+     <?php  include '../HeaderFooter/footer.php' ?>
 
     </div>
 
     <!-- javascript per login form-->
-    <script src="../js/loginForm.js"> </script>
-
-    <?php include_once '../repository/userRepository.php';
-            include_once '../controllers/userController.php';
-    ?>
+    <script src="js/loginForm.js"></script>
+    <script src="../js/slider.js"></script>
+    
+    
 </body>
 </html>
+

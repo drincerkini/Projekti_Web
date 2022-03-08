@@ -56,46 +56,43 @@
 tr:nth-child(even) {
   background-color: #D6EEEE;
 }
+
+
 </style>
 </head>
 <body>
 
   <!-- pjesa e header -->
-  <!--pjesa e header-->
   <div class="header">
         <?php  include '../HeaderFooter/header.php' ?>
     </div>
 
-<div>
+
     <table class="content-table">
         <thead>
             <tr>
               <th>ID</th>
-              <th>NAME</th>
-              <th>SURNAME</th>
-              <th>EMAIL</th>
-              <th>PASSWORD</th>
-              <th>ROLE</th>
+              <th>IMAGE</th>
+              <th>DESCRIPTION</th>
+              <th>PRICE</th>
+              <th><a href="kidsProducts.php"> <img src="../images/add.png" style="width: 35px; height: 35px;"> Shto </a></th>
             </tr>
         </thead>
         <tbody>
             <?php  
-                include_once '../repository/userRepository.php';
-                $userRepository = new UserRepository;
-                $users = $userRepository->getAllUsers();
+                include_once '../repository/kidsRepository.php';
+                $prodRepo = new KidsRepository;
+                $products = $prodRepo->getAllProducts();
 
-              foreach($users as $user){
+              foreach($products as $prod){
                 echo
                 "
                   <tr>
-                      <td> $user[uid] </td>
-                      <td> $user[name] </td>
-                      <td> $user[surname] </td>
-                      <td> $user[email] </td>
-                      <td> $user[password] </td>
-                      <td> $user[role] </td>
-                      <td> <a href='edit.php?id=$user[uid]' >Edit </a> </td>
-                      <td> <a href='deleteUser.php?id=$user[uid]' >Delete </a> </td>
+                      <td> $prod[pid] </td>
+                      <td> $prod[image] </td>
+                      <td> $prod[description] </td>
+                      <td> $prod[price] </td>
+                      <td> <a href='deleteKids.php?id=$prod[pid]' >Delete </a> </td>
                   </tr>
                 ";
               }

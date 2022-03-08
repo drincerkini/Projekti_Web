@@ -16,7 +16,7 @@
                 $_SESSION['email'] = $email;
                 $_SESSION['password'] = $password;
                 $_SESSION['role'] = $user['role'];
-                header("location:../index.php");
+                header("location:index.php");
             }else{
                 echo "<script> alert('Email dhe Password nuk jan te sakta!'); </script>";
             }

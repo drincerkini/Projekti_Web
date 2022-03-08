@@ -62,26 +62,9 @@ tr:nth-child(even) {
 
   <!-- pjesa e header -->
   <div class="header">
-      <div class="navbar">
-          <div class="logo">
-              <img src="../images/logo-11.png" width="150px">
-          </div>
-          
-          <nav>
-              <ul>
-                  <li><a href="../index.php">Home</a></li>
-                  <li><a href="produktet.php">Men Products</a></li>
-                  <li><a href="womenProducts.php">Women Products</a></li>
-                  <li><a href="kidsProducts.php">Kids</a></li>
-                  <li><a href="register.php">Login</a></li>
-                  <li><a href="logout.php">Log out</a></li>
-              </ul>
-          </nav>
-
-          <img src="../images/icona-buy.png" width="30px" height="30px">
+        <?php  include '../HeaderFooter/header.php' ?>
 
       </div>
-    </div>
 
 <div>
     <table class="content-table">
@@ -91,6 +74,7 @@ tr:nth-child(even) {
               <th>IMAGE</th>
               <th>DESCRIPTION</th>
               <th>PRICE</th>
+              <th><a href="mainProduct.php"> <img src="../images/add.png" style="width: 35px; height: 35px;"> Shto </a></th>
             </tr>
         </thead>
         <tbody>
@@ -107,7 +91,7 @@ tr:nth-child(even) {
                       <td> $prod[image] </td>
                       <td> $prod[description] </td>
                       <td> $prod[price] </td>
-                      
+                      <td> <a href='deleteMain.php?id=$prod[pid]' >Delete </a> </td>
                   </tr>
                 ";
               }

@@ -255,3 +255,26 @@ ul{
 .copyright{
     text-align: center;
 }
+
+/* pjesa e responsivitetit */
+@media screen and (max-width: 390px){
+    .categories{
+        flex-direction: column;
+    }
+
+    .small-container{
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 820px) {
+    .categories{
+        flex-direction: column;
+    }
+
+    .small-container{
+        flex-direction: column;
+    }
+}
+

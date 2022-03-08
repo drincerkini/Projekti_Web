@@ -1,3 +1,19 @@
+<?php session_start(); 
+
+
+    $hide = "";
+    if(!isset($_SESSION['email'])){
+        header("location: register.php");
+    }
+    else {
+
+        if($_SESSION['role'] == 'admin'){
+            $hide = "";
+        }else{
+            $hide = "hide";
+        }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +27,7 @@
 
     <!-- pjesa e header -->
     <div class="header">
-        <?php  include '../HeaderFooter/headerProduct.php' ?>
+        <?php  include '../HeaderFooter/header.php' ?>
     </div>
    
 
@@ -108,8 +124,10 @@
 
     <!--pjesa e footer-it -->
     <div class="footer">
-        <?php  include '../HeaderFooter/footerProducts.php' ?>
+        <?php  include '../HeaderFooter/footer.php' ?>
     </div>
     
 </body>
 </html>
+
+<?php } ?>

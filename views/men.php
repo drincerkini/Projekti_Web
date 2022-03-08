@@ -1,3 +1,19 @@
+<?php session_start(); 
+
+
+    $hide = "";
+    if(!isset($_SESSION['email'])){
+        header("location: register.php");
+    }
+    else {
+
+        if($_SESSION['role'] == 'admin'){
+            $hide = "";
+        }else{
+            $hide = "hide";
+        }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +27,7 @@
     
 <!-- pjesa e header -->
     <div class="header">
-        <?php  include '../HeaderFooter/headerProduct.php' ?>
+        <?php  include '../HeaderFooter/header.php' ?>
     </div>
 
 
@@ -65,14 +81,14 @@
             <?php 
                  include_once '../repository/menRepository.php';
 
-                $prodRepo = new TestRepo;
+                $prodRepo = new MenRepository;
                 $prod = $prodRepo->getAllProducts();
 
                 foreach($prod as $produktet){
                     echo "
                         <div class='col-4'> 
                             <img src='../images/men/$produktet[image]' >
-                            <h4>$produktet[descritpion]</h4>
+                            <h4>$produktet[description]</h4>
                             <p>$produktet[price]€</p>
                         </div>
                     ";
@@ -111,9 +127,11 @@
 
 <!--pjesa e footer-it -->
     <div class="footer">
-        <?php  include '../HeaderFooter/footerProducts.php' ?>
+        <?php  include '../HeaderFooter/footer.php' ?>
     </div>
 
 
 </body>
 </html>
+
+<?php }?>

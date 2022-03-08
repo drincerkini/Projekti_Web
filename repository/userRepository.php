@@ -26,8 +26,8 @@ class UserRepository extends User{
         $sql = "INSERT INTO users(uid, name, surname, email, password) VALUES(?, ?, ?, ?, ?)";
         $statment = $conn->prepare($sql);
         $statment->execute([$uid, $name, $surname, $email, $password]);
-    
         
+        echo "<script> alert('Ju jeni regjistruar me sukses'); </script>";
     }
 
 
@@ -71,10 +71,10 @@ class UserRepository extends User{
     public function updateUser($id,$name,$surname,$email,$password, $role){
         $conn = $this->connection;
 
-        $sql = "UPDATE users SET name=?, surname=?, email=?, password=?";
+        $sql = "UPDATE users SET name=?, surname=?, email=?, password=?, role=? WHERE uid=$id";
 
         $statement = $conn->prepare($sql);
-        $statement->execute([$id, $name, $surname, $email, $password, $role]);
+        $statement->execute([$name, $surname, $email, $password, $role]);
         echo "<script> alert('Updated successfuly!'); </script>";
     }
 
@@ -87,7 +87,7 @@ class UserRepository extends User{
         $statement = $conn->prepare($sql);
         $statement->execute([$uid]);
 
-        echo "<script>alert('delete was successful'); </script>";
+        echo "<script>alert('Delete was successful'); </script>";
     }
 
 

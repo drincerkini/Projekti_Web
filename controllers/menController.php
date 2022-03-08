@@ -1,5 +1,5 @@
 <?php 
-include_once '../repository/produktiRepository.php';
+include_once '../repository/menRepository.php';
 include_once '../models/produkti.php';
 
 session_start();
@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
         $price = $_POST['price'];
 
         $produkti = new Produkti('', $image, $description, $price);
-        $prodRepo = new ProduktiRepository();
+        $prodRepo = new MenRepository();
 
         $prodRepo->insertProdukti($produkti);
         echo "<script> alert('Ju Upladuat me sukses!'); </script>";

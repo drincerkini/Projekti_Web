@@ -19,7 +19,7 @@ if(isset($_POST['register'])){
         $userRepository = new UserRepository();
 
         $userRepository->insertUser($user);
-        echo "<script> alert('Ju jeni regjistruar me sukses!'); </script>";
+        
     }
 }
 ?>

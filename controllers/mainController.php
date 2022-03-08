@@ -1,6 +1,6 @@
 <?php 
-include_once 'repository/mainRepository.php';
-include_once 'models/produkti.php';
+include_once '../repository/mainRepository.php';
+include_once '../models/produkti.php';
 
 session_start();
 

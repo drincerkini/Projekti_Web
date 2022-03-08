@@ -38,6 +38,18 @@ class KidsRepository extends Produkti{
 
         return $products;
     }
+
+    //Fshirja e produkteve
+    public function delete($pid){
+        $conn = $this->connection;
+
+        $sql = "DELETE FROM kidsproducts WHERE pid=?";
+
+        $statement = $conn->prepare($sql);
+        $statement->execute([$pid]);
+
+        echo "<script>alert('delete was successful'); </script>";
+    }
 }
 
 

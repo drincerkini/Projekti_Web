@@ -41,8 +41,8 @@
 </html>
 
 <?php 
-include_once '../repository/produktiRepository.php';
-include_once '../controllers/produktiController.php';
+include_once '../repository/menRepository.php';
+include_once '../controllers/menController.php';
 
 
 ?>
